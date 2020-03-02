@@ -69,7 +69,7 @@ public class exampleDTM {
 		 /********************************************************************
 		  * Execute the Example DTM
 		  ********************************************************************/
-		 mod3exampleDTM.run();
+		 mod3exampleDTM.program();
 		 
 	}
 

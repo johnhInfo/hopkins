@@ -37,12 +37,20 @@ public class genericDTM {
 		this.success = false; 
 	}
 	
+	/*************************************************************************************
+	 * States A method that returns all possible states for a given DTM
+	 * 
+	 * @return An array containing all Q states
+	 * ***********************************************************************************/
+	public state[] States() {
+		return this.states;
+	}
 	
 	/************************************************************************************
-	 *run attempts to run the DTM for a given input 
+	 *Program attempts to run the DTM; The DTM must be initialized. 
 	 *
 	 ************************************************************************************/
-	public void run() {
+	public void program() {
 											/* Keeps track of the index of current state*/
 		this.currentStateIndex = initialStateIndex;
 		boolean halt = false;               /* Execute until halt                       */
@@ -114,6 +122,7 @@ public class genericDTM {
 			System.out.println("The output tape can be viewed below: ");
 			System.out.println(this.tape.tape);
 	}
+	
 }
 	
 
