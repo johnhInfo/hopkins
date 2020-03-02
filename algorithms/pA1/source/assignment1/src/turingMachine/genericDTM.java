@@ -8,7 +8,6 @@ public class genericDTM {
 	private state[] states;				//An array of possible states
 	private int initialStateIndex;		//The start state
 	private int currentStateIndex;		//The current state of the DTM
-	private int tapeIndex; 				//The current location of the head
 	public boolean success;				//DTM decision 
 	
 	/*********************************************************************************
