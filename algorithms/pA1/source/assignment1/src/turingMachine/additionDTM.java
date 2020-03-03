@@ -2,8 +2,26 @@ package turingMachine;
 
 public class additionDTM {
 	
-public static void main(String[] args) {
-		
+	public char[] tape;				/*The tape containing input params 		 */
+	
+	/*************************************************************************
+	 * Constructor Creates an object of the additionDTM class and initializes
+	 *             ... the input tape
+	 *             
+	 * @param inputTape a char[] modeling an input tape 
+	 *************************************************************************/
+	public additionDTM(char[] inputTape) {
+		this.tape = inputTape;		
+	}
+	
+	/*************************************************************************
+	 * program The program method takes the inputTape stored during object
+	 *         ...initialization and attempts to execute the DTM
+	 * 
+	 * @return char[] the output tape 
+	 ************************************************************************/
+	public char[] program()
+	{
 		/********************************************************************
 		 * Control Flow:
 		 * 1. Create states Q0-Q4
@@ -120,17 +138,16 @@ public static void main(String[] args) {
 		 ********************************************************************/
 		 char[] alphabet = {'0','x','p','f',};
 		 char blankSymbol = 'b';
-		 char[] tape = {'0', 'b', '0','b'};
+		 //char[] tape = {'0', 'b', '0','b'};
 		 state[] states = {q0, q1, q2, q3, q4};
 		 int initialState = 0;
 		 genericDTM additionDTM = new genericDTM(alphabet, blankSymbol,
-				                     tape, states, initialState);
+				                     this.tape, states, initialState);
 		 /********************************************************************
 		  * Execute the Example DTM
 		  ********************************************************************/
 		 additionDTM.program();
 		 
+		 return additionDTM.tape.tape; 
 	}
-
-
 }

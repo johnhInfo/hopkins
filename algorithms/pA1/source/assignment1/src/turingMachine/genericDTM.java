@@ -117,12 +117,7 @@ public class genericDTM {
 			/*End While Loop */	
 				
 		}
-			System.out.println("The turing machine reached a decision of: ");
-			System.out.println(this.success);
-			System.out.println("The output tape can be viewed below: ");
-			System.out.println(this.tape.tape);
 	}
-	
 }
 	
 
