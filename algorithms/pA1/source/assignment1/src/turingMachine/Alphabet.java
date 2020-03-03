@@ -1,5 +1,17 @@
+/******************************************************************************
+ * File: Alphabet.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
+
 package turingMachine;
 
+/******************************************************************************
+ * Alphabet Object Models a Turing Machine's alphabet
+ * 
+ ******************************************************************************/
 public class Alphabet {
 
 	public char[] alphabet;			//Alphabet modeled as array
