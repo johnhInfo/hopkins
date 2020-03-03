@@ -1,13 +1,24 @@
+/******************************************************************************
+ * File: StateTest.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
+
 package turingMachine;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-
+/**************************************************************************
+ * StateTest contains a unit tests for the State class
+ *
+ *************************************************************************/
 class StateTest {
 	@Test 
-	void test() 	{
+	void testCase1() 	{
 	/**
 	 * For a test state "Q0", specify the action when the
 	 * input from the tape is "0" via "action" variable

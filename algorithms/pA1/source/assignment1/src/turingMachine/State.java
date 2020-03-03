@@ -1,12 +1,20 @@
+/******************************************************************************
+ * File: State.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
+
 package turingMachine;
 
-/**
- * State class specifies a state. 
+/*********************************************************************************
+ * State Object models a state in Q for a given Turing Machine
  *
  * This includes: 
- *                (1) State's Name
+ *                (1) State's Name [represented by a number]
  *                (2) An Array of Transition Functions
- */
+ *********************************************************************************/
 public class State {
 	
 	public int stateName;
