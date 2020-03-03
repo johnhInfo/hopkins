@@ -1,12 +1,17 @@
+/******************************************************************************
+ * File: SubtractionDTM.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
+
 package turingMachine;
 /******************************************************************************
- * subtractionDTM 
+ * subtractionDTM Object models a Turing Machine that completes subtraction
+ *                ... of two unary numbers  
  * 
  * references: https://www.youtube.com/watch?v=X7bxtpNktAE
- * 
- * 
- * 
- * 
  * 
  * @author johnherrmann
  * @date 3/2/2020
@@ -16,7 +21,7 @@ public class SubtractionDTM {
 	public char[] tape;				/*The tape containing input params 		 */
 	
 	/*************************************************************************
-	 * Constructor Creates an object of the additionDTM class and initializes
+	 * Constructor Creates an object of the subtractionDTM class and initializes
 	 *             ... the input tape
 	 *             
 	 * @param inputTape a char[] modeling an input tape 
@@ -147,7 +152,7 @@ public class SubtractionDTM {
 		 GenericDTM subtractionDTM = new GenericDTM(alphabet, blankSymbol,
 				                     this.tape, states, initialState);
 		 /********************************************************************
-		  * Execute the Example DTM
+		  * Execute the subtractionDTM 
 		  ********************************************************************/
 		 subtractionDTM.program();
 		 
