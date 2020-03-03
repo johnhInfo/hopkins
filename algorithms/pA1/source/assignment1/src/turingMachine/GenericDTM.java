@@ -1,5 +1,20 @@
+/******************************************************************************
+ * File: GenericDTM.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
 package turingMachine;
 
+/******************************************************************************
+ * GenericDTM Object models a generic Deterministic Turing Machine. 
+ * 
+ * The GenericDTM can be initialized in order to perform the action of any 
+ * Turing machine
+ * 
+ * 
+ *******************************************************************************/
 public class GenericDTM {
 	
 	private Alphabet alphabet;			//The alphabet model

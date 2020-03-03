@@ -1,5 +1,16 @@
+/******************************************************************************
+ * File: ExampleDTM.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
 package turingMachine;
 
+/******************************************************************************
+ * ExampleDTM Object Models Module 3's Example Turing Machine
+ * 
+ ******************************************************************************/
 public class ExampleDTM {
 	
 	public static void main(String[] args) {
