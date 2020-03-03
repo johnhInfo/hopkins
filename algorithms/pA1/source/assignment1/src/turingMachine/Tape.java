@@ -1,5 +1,16 @@
-package turingMachine;
+/******************************************************************************
+ * File: Tape.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
 
+package turingMachine;
+/******************************************************************************
+ * Tape Object models a Turing Machine's input "tape" which is used to provide
+ *      ... the Turing Machine with an input
+ *******************************************************************************/
 public class Tape {
 	
 	public int length;			//The length of the tape
