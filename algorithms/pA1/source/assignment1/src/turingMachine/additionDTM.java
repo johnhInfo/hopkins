@@ -1,5 +1,13 @@
 package turingMachine;
-
+/******************************************************************************
+ * additionDTM 
+ * 
+ * references: https://www.geeksforgeeks.org/turing-machine-addition/
+ * 
+ * 
+ * @author johnherrmann
+ * @date 3/2/2020
+ ******************************************************************************/
 public class additionDTM {
 	
 	public char[] tape;				/*The tape containing input params 		 */
