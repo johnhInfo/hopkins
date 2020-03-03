@@ -1,3 +1,10 @@
+/******************************************************************************
+ * File: MultiplicationDTMTest.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
 package turingMachine;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
