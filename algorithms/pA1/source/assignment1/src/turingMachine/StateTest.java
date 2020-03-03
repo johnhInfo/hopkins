@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 
-class stateTest {
+class StateTest {
 	@Test 
 	void test() 	{
 	/**
@@ -14,8 +14,8 @@ class stateTest {
 	 * 
 	 * Create the transition function for Q0 with input "0"
 	 */
-	action q0_zero_trans   = new action('1', Movement.LEFT, 1);
-	transitionFunction q0_zero = new transitionFunction('0',q0_zero_trans);
+	Action q0_zero_trans   = new Action('1', Movement.LEFT, 1);
+	TransitionFunction q0_zero = new TransitionFunction('0',q0_zero_trans);
 	
 	/**
 	 * For a test state "Q0", specify the action when the
@@ -23,8 +23,8 @@ class stateTest {
 	 * 
 	 * Create the transition function for Q0 with input "1"
 	 */
-	action q0_one_trans   = new action('0', Movement.RIGHT, 2);
-	transitionFunction q0_one = new transitionFunction('1',q0_one_trans);
+	Action q0_one_trans   = new Action('0', Movement.RIGHT, 2);
+	TransitionFunction q0_one = new TransitionFunction('1',q0_one_trans);
 	
 	/**
 	 * For a test state "Q0", specify the action when the
@@ -32,22 +32,22 @@ class stateTest {
 	 * 
 	 * Create the transition function for Q0 with input "blank"
 	 */
-	action q0_blank_trans   = new action('1', Movement.HALT_PASS, 3);
-	transitionFunction q0_blank = new transitionFunction('b',q0_blank_trans);
+	Action q0_blank_trans   = new Action('1', Movement.HALT_PASS, 3);
+	TransitionFunction q0_blank = new TransitionFunction('b',q0_blank_trans);
 	
 	/**
 	 * Now that the three possible transition functions have been developed,
 	 * create an array of transition functions to specify all possible
 	 * transitions for a given state
 	 */
-	transitionFunction[] transitions = { q0_zero, q0_one, q0_blank };
+	TransitionFunction[] transitions = { q0_zero, q0_one, q0_blank };
 	
 	
 	/**
 	 * Create a new state named "1" (which denotes Q1) and assign it
 	 * the array of transitionFunctions 
 	 */
-	state newState = new state(1, transitions);
+	State newState = new State(1, transitions);
 	
 	assertEquals(1, newState.stateName, "State Name assignment failed");
 	assertEquals('0', newState.transitionFunctions[0].input, "Read 0 assignment failed");

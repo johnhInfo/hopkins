@@ -7,7 +7,7 @@ package turingMachine;
  *                (2) Direction of Tape Movement
  *                (3) The next state
  */
-public class action {
+public class Action {
 	
 	public char writeSymbol; 
 	public Movement moveTape;
@@ -21,7 +21,7 @@ public class action {
 	 * @param moveTape    The direction of tape head movement
 	 * @param nextState   The next state in the control machine 
 	 */
-	public action(char writeSymbol, Movement moveTape, int nextState) {
+	public Action(char writeSymbol, Movement moveTape, int nextState) {
 		this.writeSymbol = writeSymbol;
 		this.moveTape = moveTape;
 		this.nextState = nextState;

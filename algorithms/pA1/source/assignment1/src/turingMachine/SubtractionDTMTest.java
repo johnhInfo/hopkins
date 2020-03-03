@@ -4,7 +4,7 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 
-class subtractionDTMTest {
+class SubtractionDTMTest {
 	
 	/***********************************************************
 	 * Test: 3-2
@@ -14,7 +14,7 @@ class subtractionDTMTest {
 		
 		 char[] tape = {'1', '1','1','0','1','1','b'};
 		 char[] success = {'b', 'b','b','1','b','b','b'};
-		 subtractionDTM test1 = new subtractionDTM(tape);
+		 SubtractionDTM test1 = new SubtractionDTM(tape);
 		 char[] output = test1.program();
 		 boolean equals = Arrays.equals(output, success);
 		 assertEquals(equals, true, "3-2 Calculation Failed");
@@ -28,7 +28,7 @@ class subtractionDTMTest {
 		
 		 char[] tape = {'1', '1','1','0','1','1','1','b'};
 		 char[] success = {'b', 'b','b','0','b','b','b','b'};
-		 subtractionDTM test1 = new subtractionDTM(tape);
+		 SubtractionDTM test1 = new SubtractionDTM(tape);
 		 char[] output = test1.program();
 		 boolean equals = Arrays.equals(output, success);
 		 assertEquals(equals, true, "3-3 Calculation Failed");
@@ -41,7 +41,7 @@ class subtractionDTMTest {
 		
 		char[] tape = {'1', '1','1','1','1','1','1','0','1','1','b'};
 		char[] success = {'b', 'b','b','1','1','1','1','1','b','b','b'};
-		subtractionDTM test1 = new subtractionDTM(tape);
+		SubtractionDTM test1 = new SubtractionDTM(tape);
 		char[] output = test1.program();
 		boolean equals = Arrays.equals(output, success);
 		assertEquals(equals, true, "7-2 Calculation Failed");
@@ -53,7 +53,7 @@ class subtractionDTMTest {
 	void test4() {
 		char[] tape = {'1', '1','1','1','1','1','1','1','1','0','1','1','b'};
 		char[] success = {'b','b','b','1','1','1','1','1','1','1','b','b','b'};
-		subtractionDTM test1 = new subtractionDTM(tape);
+		SubtractionDTM test1 = new SubtractionDTM(tape);
 		char[] output = test1.program();
 		System.out.println(output);
 		boolean equals = Arrays.equals(output, success);

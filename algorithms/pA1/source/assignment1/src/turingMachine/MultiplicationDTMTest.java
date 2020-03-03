@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  * 
  * @date 3/3/2020
  ******************************************************************************/
-class multiplicationDTMTest {
+class MultiplicationDTMTest {
 	/***********************************************************
 	 * Test 1: 2*3
 	 ***********************************************************/
@@ -25,7 +25,7 @@ class multiplicationDTMTest {
 	void testCase1() {
 		 char[] tape = {'1', '1','0','1','1','1','0','b','b','b','b','b','b','b','b','b','b','b','b'};
 		 char[] success = {'b','b','b','b','1','1','0','1','1','1','1','1','1','b','b','b','b','b','b'};
-		 multiplicationDTM test1 = new multiplicationDTM(tape);
+		 MultiplicationDTM test1 = new MultiplicationDTM(tape);
 		 char[] output = test1.program();
 		 //System.out.println(output);
 		 boolean equals = Arrays.equals(output, success);
@@ -39,7 +39,7 @@ class multiplicationDTMTest {
 		
 		char[] tape = {'1', '1','1','0','1','1','1','0','b','b','b','b','b','b','b','b','b','b','b','b'};
 		 char[] success = {'b','b','b','b','b','1','1','0','1','1','1','1','1','1','1','1','1','b','b', 'b'};
-		 multiplicationDTM test1 = new multiplicationDTM(tape);
+		 MultiplicationDTM test1 = new MultiplicationDTM(tape);
 		 char[] output = test1.program();
 		 //System.out.println(output);
 		 boolean equals = Arrays.equals(output, success);
@@ -53,7 +53,7 @@ class multiplicationDTMTest {
 		
 		char[] tape = {'1', '1','1','1','1','1','1','0','1','1','0','b','b','b','b','b','b','b','b','b','b','b','b','b','b'};
 		char[] success = {'b','b','b','b','b','b','b','b','b','1','0','1','1','1','1','1','1','1','1','1','1','1','1','1','1'};
-		multiplicationDTM test1 = new multiplicationDTM(tape);
+		MultiplicationDTM test1 = new MultiplicationDTM(tape);
 		char[] output = test1.program();
 		//System.out.println(output);
 		boolean equals = Arrays.equals(output, success);
@@ -66,7 +66,7 @@ class multiplicationDTMTest {
 	void testCase4() {
 		char[] tape = {'1', '1','1','1','0','1','1','1','1','0','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b'};
 		char[] success = {'b','b','b','b','b','b','1','1','1','0','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','b'};
-		multiplicationDTM test1 = new multiplicationDTM(tape);
+		MultiplicationDTM test1 = new MultiplicationDTM(tape);
 		char[] output = test1.program();
 		//System.out.println(output);
 		boolean equals = Arrays.equals(output, success);

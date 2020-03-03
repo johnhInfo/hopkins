@@ -1,11 +1,11 @@
 package turingMachine;
 
-public class genericDTM {
+public class GenericDTM {
 	
 	private Alphabet alphabet;			//The alphabet model
 	private char blankSymbol;			//The tape's blank symbol
 	public  Tape tape;					//The tape model
-	private state[] states;				//An array of possible states
+	private State[] states;				//An array of possible states
 	private int initialStateIndex;		//The start state
 	private int currentStateIndex;		//The current state of the DTM
 	public boolean success;				//DTM decision 
@@ -19,7 +19,7 @@ public class genericDTM {
 	 *  @param states - an array containing Q states
 	 *  @param initialStateIndex - the start state index  
 	 *********************************************************************************/
-	public genericDTM(char[] alphabet, char blankSymbol, char[] tape, state[] states,
+	public GenericDTM(char[] alphabet, char blankSymbol, char[] tape, State[] states,
 					  int initialStateIndex) {
 		
 											/* Initialize the alphabet model			*/
@@ -42,7 +42,7 @@ public class genericDTM {
 	 * 
 	 * @return An array containing all Q states
 	 * ***********************************************************************************/
-	public state[] States() {
+	public State[] States() {
 		return this.states;
 	}
 	
@@ -81,8 +81,8 @@ public class genericDTM {
 											/* Acquire the model for the current state  
 											 * ... and identify the transition function
 											 * ... for the tape head reading			*/
-			state currentState = states[currentStateIndex];
-			transitionFunction tf = currentState.getInputTf(tapeElement);
+			State currentState = states[currentStateIndex];
+			TransitionFunction tf = currentState.getInputTf(tapeElement);
 			/* Confirm the TF exists for Tape's Value*/ 
 			if( tf == null) {
 				halt = true;

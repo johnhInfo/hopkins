@@ -4,7 +4,7 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 
-class additionDTMTest {
+class AdditionDTMTest {
 	
 	/***********************************************************
 	 * Test: 1+1
@@ -14,7 +14,7 @@ class additionDTMTest {
 		
 		 char[] tape = {'0', 'b', '0','b'};
 		 char[] success = {'p', '0', '0', 'b'};
-		 additionDTM test1 = new additionDTM(tape);
+		 AdditionDTM test1 = new AdditionDTM(tape);
 		 char[] output = test1.program();
 		 
 		 
@@ -31,7 +31,7 @@ class additionDTMTest {
 		
 		 char[] tape = {'0', '0','b', '0','b'};
 		 char[] success = {'p', '0','0', '0', 'b'};
-		 additionDTM test1 = new additionDTM(tape);
+		 AdditionDTM test1 = new AdditionDTM(tape);
 		 char[] output = test1.program();
 		 
 		 
@@ -47,7 +47,7 @@ class additionDTMTest {
 		
 		 char[] tape = {'0', '0','b', '0','0','b'};
 		 char[] success = {'p', '0','0', '0','0', 'b'};
-		 additionDTM test1 = new additionDTM(tape);
+		 AdditionDTM test1 = new AdditionDTM(tape);
 		 char[] output = test1.program();
 		 
 		 
@@ -63,7 +63,7 @@ class additionDTMTest {
 		
 		 char[] tape = {'0', '0','0', '0', '0','b','0', '0', '0', '0', '0', '0','0','b'};
 		 char[] success = {'p', '0','0', '0','0','0','0', '0','0','0','0', '0','0', 'b'};
-		 additionDTM test1 = new additionDTM(tape);
+		 AdditionDTM test1 = new AdditionDTM(tape);
 		 char[] output = test1.program();
 		 
 		 

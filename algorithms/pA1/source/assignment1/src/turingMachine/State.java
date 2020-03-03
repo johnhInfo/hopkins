@@ -7,10 +7,10 @@ package turingMachine;
  *                (1) State's Name
  *                (2) An Array of Transition Functions
  */
-public class state {
+public class State {
 	
 	public int stateName;
-	public transitionFunction[] transitionFunctions;
+	public TransitionFunction[] transitionFunctions;
 	
 	/********************************************************************
 	 * Initializes an object of the "state" class
@@ -18,7 +18,7 @@ public class state {
 	 * @param stateName The state's name
 	 * @param transitionFunctions The possible transition functions 
 	 **********************************************************************/
-	public state(int stateName, transitionFunction[] transitionFunctions) {
+	public State(int stateName, TransitionFunction[] transitionFunctions) {
 		this.stateName = stateName;
 		this.transitionFunctions = transitionFunctions;
 	}
@@ -28,9 +28,9 @@ public class state {
 	 *
 	 * @param tapeInput the character present in the under the tape head
 	 **********************************************************************/
-	public transitionFunction getInputTf(char tapeInput) {
+	public TransitionFunction getInputTf(char tapeInput) {
 									/* Initialize output to NULL */
-		transitionFunction tf = null;
+		TransitionFunction tf = null;
 									/* Find TF for given character input */
 		for(int i = 0; i < this.transitionFunctions.length; i++) {
 			if(this.transitionFunctions[i].input == tapeInput)

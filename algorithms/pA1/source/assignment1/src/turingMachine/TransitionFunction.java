@@ -8,10 +8,10 @@ package turingMachine;
  *                (1) Tape Input
  *                (2) The Action of the Transition
  */
-public class transitionFunction {
+public class TransitionFunction {
 	
 	public char input;
-	public action transition; 
+	public Action transition; 
 	
 	/**
 	 * Initializes an object of the "transitionFunction" class
@@ -19,7 +19,7 @@ public class transitionFunction {
 	 * @param input The input from the tape head 
 	 * @param transition The action completed during the transition 
 	 */
-	public transitionFunction(char input, action transition) {
+	public TransitionFunction(char input, Action transition) {
 		this.input = input;
 		this.transition = transition;
 	}
