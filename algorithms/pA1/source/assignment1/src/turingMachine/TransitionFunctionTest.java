@@ -28,8 +28,6 @@ class TransitionFunctionTest {
 		assertEquals('1', tf.transition.writeSymbol, "*1* assignment failed");
 		assertEquals(Movement.LEFT, tf.transition.moveTape, "LEFT* assignment failed");
 		assertEquals(3, tf.transition.nextState, "3 assignment failed");
-		
-		
 		}
 	}
 
