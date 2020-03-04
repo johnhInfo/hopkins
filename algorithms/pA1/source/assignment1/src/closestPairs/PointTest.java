@@ -25,7 +25,7 @@ class PointTest {
 		
 		Point p1 = new Point(0,0);
 		double dist = p1.distance(5,5);
-		System.out.println((int)dist);
+		//System.out.println((int)dist);
 		assertEquals((int)dist,(int)7, "Distance Calculation Failed...");
 	}
 	
@@ -33,7 +33,7 @@ class PointTest {
 	void testCase_distance2() {
 		Point p1 = new Point(10,0);
 		double dist = p1.distance(25,5);
-		System.out.println((int)dist);
+		//System.out.println((int)dist);
 		assertEquals((int)dist,(int)15.8114, "Distance Calculation Failed...");
 	}
 	
@@ -41,8 +41,38 @@ class PointTest {
 	void testCase_distance3() {
 		Point p1 = new Point(-10,0);
 		double dist = p1.distance(25,-5);
-		System.out.println((int)dist);
+		//System.out.println((int)dist);
 		assertEquals((int)dist,(int)35.3553, "Distance Calculation Failed...");
+	}
+	
+	@Test
+	void testCase_compareToXBigger() {
+		Point p1 = new Point(10,0);
+		Point p2 = new Point(0,0);
+		p1.sort = Cartesian.xSort;
+		int compare = p1.compareTo(p2);
+		//System.out.println(compare);
+		assertEquals(compare,1, "Compare Calculation Failed");
+	}
+	
+	@Test
+	void testCase_compareToXSame() {
+		Point p1 = new Point(-10,0);
+		Point p2 = new Point(-10,0);
+		p1.sort = Cartesian.xSort;
+		int compare = p1.compareTo(p2);
+		//System.out.println(compare);
+		assertEquals(compare,0, "Compare Calculation Failed");
+	}
+	
+	@Test
+	void testCase_compareToXSmaller() {
+		Point p1 = new Point(10,0);
+		Point p2 = new Point(100,0);
+		p1.sort = Cartesian.xSort;
+		int compare = p1.compareTo(p2);
+		//System.out.println(compare);
+		assertEquals(compare,-1, "Compare Calculation Failed");
 	}
 	
 }
