@@ -1,13 +1,18 @@
+/******************************************************************************
+ * File: PointList.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
 package closestPairs;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PointList {
 	
 	public ArrayList<Point> list;
-	private int median;
-	private int length;
-
 	
 	/**************************************************************
 	 * Constructor Method creates an object of the class PointList
@@ -15,10 +20,7 @@ public class PointList {
 	public PointList() {
 		ArrayList<Point> temp = new ArrayList<Point>();
 		this.list = temp;
-		this.median = 0;
-		this.length = 0;
 	}
-	
 	/***************************************************************
 	 * add Method adds a point to the PointList
 	 * 
@@ -28,9 +30,21 @@ public class PointList {
 		
 		this.list.add(e);
 	}
+	/***************************************************************
+	 * sortXAxis Sorts the array list based on the X axis values
+	 ***************************************************************/
+	public void sortXAxis()
+	{
+		Collections.sort(this.list, new SortXAxis());
+	}
 	
-	
-	
+	/***************************************************************
+	 * sortYAxis Sorts the array list based on the X axis values
+	 ***************************************************************/
+	public void sortYAxis()
+	{
+		Collections.sort(this.list, new SortYAxis());
+	}
 	
 }
 
