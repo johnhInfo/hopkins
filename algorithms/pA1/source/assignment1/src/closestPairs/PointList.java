@@ -13,6 +13,7 @@ import java.util.Collections;
 public class PointList {
 	
 	public ArrayList<Point> list;
+	public double distance;
 	
 	/**************************************************************
 	 * Constructor Method creates an object of the class PointList
@@ -44,6 +45,28 @@ public class PointList {
 	public void sortYAxis()
 	{
 		Collections.sort(this.list, new SortYAxis());
+	}
+	/***************************************************************
+	 * size Returns the size of an arrayList
+	 ***************************************************************/
+	public int size()
+	{
+		return this.list.size();
+	}
+	
+	/***************************************************************
+	 * createPair creates a PairList which contains only two points
+	 * 
+	 * @param Point A The first Point in the pair
+	 * @param Point B The second Point in the pair
+	 * @return Distance The distance between the two points 
+	 ***************************************************************/
+	public double createPair(Point A, Point B)
+	{
+		ArrayList<Point> temp = new ArrayList<Point>();
+		temp.add(A);
+		temp.add(B);
+		return this.distance = A.distance(B.x,  B.y);
 	}
 	
 }

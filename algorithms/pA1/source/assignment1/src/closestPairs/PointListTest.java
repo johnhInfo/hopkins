@@ -62,5 +62,29 @@ public class PointListTest {
 		assertEquals(1,pList.list.get(3).y,"Y Sort Failed");
 		assertEquals(1000,pList.list.get(4).y,"Y Sort Failed");
 	}
+	@Test
+	void testCase_sizeLarge() {
+		Point p1 = new Point(0,0);
+		Point p2 = new Point(0,1);
+		Point p3 = new Point(0,-1);
+		Point p4 = new Point(0,1000);
+		Point p5 = new Point(0,-10000);
+		
+		PointList pList = new PointList();
+		
+		pList.add(p1);
+		pList.add(p2);
+		pList.add(p3);
+		pList.add(p4);
+		pList.add(p5);
+		int size = pList.size();
+		assertEquals(5, size,"PointList Size Test Failed");
+	}
+	@Test
+	void testCase_sizeZero() {
+		PointList pList = new PointList();
+		int size = pList.size();
+		assertEquals(0, size,"PointList Size Test Failed");
+	}
 
 }
