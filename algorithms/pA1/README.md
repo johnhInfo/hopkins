@@ -84,7 +84,7 @@ Disclaimer: Using Eclipse has been a painful experience
 
         ----Section 3b: Running FindClosestPairs ----
 
-    Precondition 1: Steps 3A 1-11 completed successfuly
+    Precondition 1: Steps 3A 1-11 completed successfully
     Precondition 2: User is currently using Eclipse 
 
     Step 1: [In Eclipse Project Explorer] Navigate to src/closestPairs
@@ -93,7 +93,7 @@ Disclaimer: Using Eclipse has been a painful experience
         Step 2A: [In Eclipse Project Explorer] Left click on FindClosestPairs
         Step 2B: [In pop-up window] Click 'Run As'-> 'Run Configurations'
         Step 2C: [In dialog window] Click 'Java Application'
-        Step 2D: [In dialog window] Click 'Launce New Configuration'
+        Step 2D: [In dialog window] Click 'Launch New Configuration'
         Step 2E: [In dialog window] Choose Main Class: closestPairs.FindClosestPairs
         Step 2F: [In dialog window] Click "Arguments" tab
         Step 2G: Copy-and-paste INPUT from /inputs/FindClosestPairs/input.txt into

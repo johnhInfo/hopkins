@@ -1,0 +1,43 @@
+/******************************************************************************
+ * File: output.txt
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *
+ * About: The following file specifies outputs for the FindClosestPairs class
+ *******************************************************************************/
+
+Test 1 - Closest Pairs Test
+Input:1 3 5 7 11 13 17 21 23 33
+Output:
+Resultant Calculation for the closest N pair of points; N set to 10
+[1.000000, 3.000000] & [5.000000, 7.000000] are distance 5.656854 apart 
+[11.000000, 13.000000] & [17.000000, 21.000000] are distance 10.000000 apart 
+[17.000000, 21.000000] & [23.000000, 33.000000] are distance 13.416408 apart 
+[11.000000, 13.000000] & [23.000000, 33.000000] are distance 23.323808 apart 
+
+Test 2 - Closest Pairs Test
+Input:111 11 1111 11 1111 1 1 111 1111 11 11111 1111 11 1 1 .1 .11 .111 .1111 111
+Output:
+Resultant Calculation for the closest N pair of points; N set to 10
+[0.111100, 111.000000] & [1.000000, 111.000000] are distance 0.888900 apart 
+[0.110000, 0.111000] & [1.000000, 0.100000] are distance 0.890068 apart 
+[1111.000000, 1.000000] & [1111.000000, 11.000000] are distance 10.000000 apart 
+[1.000000, 0.100000] & [11.000000, 1.000000] are distance 10.040418 apart 
+[1.000000, 0.100000] & [11.000000, 1.000000] are distance 10.040418 apart 
+[0.110000, 0.111000] & [11.000000, 1.000000] are distance 10.926226 apart 
+[1.000000, 111.000000] & [11.000000, 1.000000] are distance 110.453610 apart 
+[1.000000, 111.000000] & [11.000000, 1.000000] are distance 110.453610 apart 
+[0.111100, 111.000000] & [11.000000, 1.000000] are distance 110.537632 apart 
+[0.110000, 0.111000] & [0.111100, 111.000000] are distance 110.889000 apart 
+
+Test 3 - Closest Pairs Test
+Input:0 1 10 100 1000 10000 100000 10000 1000 100 10 1 0 3.14
+Output:
+Resultant Calculation for the closest N pair of points; N set to 10
+[0.000000, 1.000000] & [0.000000, 3.140000] are distance 2.140000 apart 
+[0.000000, 3.140000] & [10.000000, 100.000000] are distance 97.374841 apart 
+[0.000000, 1.000000] & [10.000000, 100.000000] are distance 99.503769 apart 
+[10.000000, 1.000000] & [1000.000000, 10000.000000] are distance 10047.890376 apart 
+[1000.000000, 100.000000] & [100000.000000, 10000.000000] are distance 99493.768649 apart 
