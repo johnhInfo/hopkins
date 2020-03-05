@@ -101,7 +101,7 @@ public class GenericDTM {
 			/* Confirm the TF exists for Tape's Value*/ 
 			if( tf == null) {
 				halt = true;
-				System.out.println("Transfer Function Error - Input Value DNE for State");
+				//System.out.println("Transfer Function Error - Input Value DNE for State");
 			}
 			else { 
 											/* write symbol to tape						*/
