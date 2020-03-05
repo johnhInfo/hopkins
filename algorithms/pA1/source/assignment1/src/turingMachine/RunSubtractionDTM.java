@@ -1,5 +1,5 @@
 /******************************************************************************
- * File: RunAdditionDTM.java
+ * File: RunSubtractionDTM.java
  * Assignment: PA1
  * Author: John A. Herrmann
  * Class: EN.605.621.82.SP20 Foundations of Algorithms
@@ -7,15 +7,15 @@
  *******************************************************************************/
 package turingMachine;
 /******************************************************************************
- * RunAdditionDTM Class runs a main method which takes a set of characters
- *                and uses said characters as an input to the Addition DTM
+ * RunSubtraction Class runs a main method which takes a set of characters
+ *                and uses said characters as an input to the Subtraction DTM
  *                  
  * @param args - characters separated by a space
- *               0 0 b 0 b                  	(Expected Output: p000b)
+ *               1 1 1 0 1 1 b                	(Expected Output: bbb1bbb)
  *               
  * @return nothing outputs pair stats via command line display
  *******************************************************************************/
-public class RunAdditionDTM {
+public class RunSubtractionDTM {
 	
 	public static void main(String args[]){
 		
@@ -25,10 +25,9 @@ public class RunAdditionDTM {
             ch[i] = args[i].charAt(0); 
         } 
         											//Init DTM with char array
-		AdditionDTM dtm = new AdditionDTM(ch);
-		
-													//Run the example program
-		System.out.println("AdditionDTM Output: ");
+		SubtractionDTM dtm = new SubtractionDTM(ch);
+													//Run the program
+		System.out.println("SubtractionDTM Output: ");
 		System.out.print(dtm.program());
 	}
 }

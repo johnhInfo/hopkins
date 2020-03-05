@@ -28,9 +28,7 @@ public class RunExampleDTM {
 		ExampleDTM mod3exampleDTM = new ExampleDTM(ch);
 													
 													//Run the example program
-		System.out.println("AdditionDTM Output: ");
-		for(int i = 0; i < 1; i++) {
-			System.out.print(mod3exampleDTM.program());
-		}
+		System.out.println("ExampleDTM Output: ");
+		System.out.print(mod3exampleDTM.program());
 	}
 }
