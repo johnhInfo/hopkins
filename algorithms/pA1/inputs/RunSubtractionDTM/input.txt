@@ -1,0 +1,25 @@
+/******************************************************************************
+ * File: input.txt
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *
+ * About: The following file specifies inputs for the RunSubtractionDTM class
+ *******************************************************************************/
+
+Test 1 - Calculate 3 - 2
+Input:1 1 1 0 1 1 b 
+
+
+Test 2 - Calculate 3 - 3
+Input:1 1 1 0 1 1 1 b 
+
+
+Test 3 - Calculate 7 - 2
+Input:1 1 1 1 1 1 1 0 1 1 b 
+
+
+Test 4 - Calculate 9 - 2
+Input:1 1 1 1 1 1 1 1 1 0 1 1 b 
+

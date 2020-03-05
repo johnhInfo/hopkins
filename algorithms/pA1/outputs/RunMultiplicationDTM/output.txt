@@ -1,0 +1,40 @@
+/******************************************************************************
+ * File: output.txt
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *
+ * About: The following file specifies outputs for the RunMultiplicationDTM class
+ *
+ * Input Tape Format : 111101110bbbbbbb (represents 4*3)
+ * 					   |__| |_| |_____|
+ *                       x   y     z
+ *                       
+ *                     x - First operand
+ *                     y - Second operand
+ *                     z - Tape where result is stored
+ *                     
+ *                     1- Consecutive 1's represent a unary number
+ *                     0- Acts as a delimeter between numbers and blank cells
+ *                     b- Constitute a blank cell
+ *                     
+ * Output Format : The result is the unary number immediately following the
+ *                 last zero present in the input. For example:
+ *                 
+ *                 bb1101111111111bbbbbbb -> would represent a 10 in decimal
+ *                      |________|
+ *                        Ten 1's
+ *******************************************************************************/
+
+Test 1 - Calculate 2*3
+Input:1 1 0 1 1 1 0 b b b b b b b b b b b b
+Output:bbbb110111111bbbbbb
+
+Test 2 - Calculate 3*3
+Input:1 1 1 0 1 1 1 0 b b b b b b b b b b b b
+Output:bbbbb110111111111bbb
+
+Test 3 - Calculate 7*2
+Input:1 1 1 1 1 1 1 0 1 1 0 b b b b b b b b b b b b b b
+Output:bbbbbbbbb1011111111111111

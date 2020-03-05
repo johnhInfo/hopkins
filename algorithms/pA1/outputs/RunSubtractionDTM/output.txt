@@ -1,0 +1,25 @@
+/******************************************************************************
+ * File: output.txt
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *
+ * About: The following file specifies outputs for the RunSubtractionDTM class
+ *******************************************************************************/
+
+Test 1 - Calculate 3 - 2
+Input:1 1 1 0 1 1 b 
+Output:bbb1bbb
+
+Test 2 - Calculate 3 - 3
+Input:1 1 1 0 1 1 1 b 
+Output:bbb0bbb
+
+Test 3 - Calculate 7 - 2
+Input:1 1 1 1 1 1 1 0 1 1 b 
+Output:bbb11111bbb
+
+Test 4 - Calculate 9 - 2
+Input:1 1 1 1 1 1 1 1 1 0 1 1 b 
+Output:bbb1111111bbb
