@@ -7,8 +7,11 @@ import java.util.List;
 public class ClosestPairs {
 
 	
-	public PointList list;
-	public int median;
+	public PointList list;				    /* Models a list of points   */
+	private boolean analyzed;			    /* Denotes whether closest pair
+											   algorithm has been completed 
+											   for findSmart*/
+	              
 	public ArrayList<PointList> pairList;  /* Stores Analyzed Pair Data*/
 	
 	
@@ -31,6 +34,7 @@ public class ClosestPairs {
 											 *... store analyzed pair data     */
 		ArrayList<PointList> temp_pairs = new ArrayList<PointList>();
 		this.pairList = temp_pairs;
+		this.analyzed = false;
 	}
 	
 	/**************************************************************************
@@ -39,25 +43,61 @@ public class ClosestPairs {
 	 **************************************************************************/
 	public double findDumb() {
 		
+		ArrayList<PointList> temp_pairs = new ArrayList<PointList>();
+		this.pairList = temp_pairs;
+		this.analyzed = false;
 		return itSearchCP(this.list, this.pairList);
 	}
 	
 	/**************************************************************************
-	 * printPairs Method uses an brute-force algorithm to find closest pairs
-	 * @return closest pair distance
+	 * ClosestNPairs Method prints the closest N pairs
 	 **************************************************************************/
-	public void printPairs() {
+	public void ClosestNPairs(int n) {
+		
+		n = Math.abs(n);								/* Insure N is positive */						
 		
 		if(this.pairList.size() > 0) {
+			Collections.sort(this.pairList, new SortByDistance());
 			
-			for(int i = 0; i < this.pairList.size(); i++) {
-				
+			int nOrAll = (n < this.pairList.size()) ? n : this.pairList.size();
+			
+			for(int i = 0; i < nOrAll; i++) {
 														/* Acquire a pair */
 				PointList tempPair = this.pairList.get(i);
 				Point a;
 				Point b;
 				double distance; 
-														/*Confirm list is pair */
+														    /*Confirm list is pair */
+				if(tempPair.size() == 2) {	
+					a = tempPair.list.get(0);				/*Acquire Points A & B */			
+					b = tempPair.list.get(1);
+					distance = tempPair.distance;
+					System.out.printf("Point A (%f, %f) and Point B(%f, %f)\n" ,
+							a.x, a.y, b.x, b.y);
+				}		
+			}
+		}
+	}
+	
+	/**************************************************************************
+	 * ClosestNPairsDistance Method prints the closest N pairs & distances
+	 **************************************************************************/
+	public void ClosestNPairsDistance(int n) {
+		
+		n = Math.abs(n);								/* Insure N is positive */						
+		
+		if(this.pairList.size() > 0) {
+			Collections.sort(this.pairList, new SortByDistance());
+			
+			int nOrAll = (n < this.pairList.size()) ? n : this.pairList.size();
+			
+			for(int i = 0; i < nOrAll; i++) {
+														/* Acquire a pair */
+				PointList tempPair = this.pairList.get(i);
+				Point a;
+				Point b;
+				double distance; 
+														    /*Confirm list is pair */
 				if(tempPair.size() == 2) {	
 					a = tempPair.list.get(0);				/*Acquire Points A & B */			
 					b = tempPair.list.get(1);
@@ -77,21 +117,24 @@ public class ClosestPairs {
 			Collections.sort(this.pairList, new SortByDistance());
 		}
 		
-		
 	/**************************************************************************
 	 * findSmart Method uses an efficient algorithm to find closest pairs
 	 * @return closest pair distance
 	 **************************************************************************/
 	public double findSmart() {
+		
+		ArrayList<PointList> temp_pairs = new ArrayList<PointList>();
+		this.pairList = temp_pairs;
+		this.list.sortXAxis();
+		this.analyzed = true;
 		return MinDist(this.list, this.pairList);
+		
 	}
-	
 	/**************************************************************************
 	 * MinDist Method uses an efficient algorithm to find closest pairs
 	 * @return closest pair distance
 	 **************************************************************************/
 	public static double MinDist(PointList points, ArrayList<PointList> pairs) {
-		
 		double minDist;
 		int numPoints = points.size();
 												/* If |P| < 3; Try All Pairs */
@@ -100,33 +143,48 @@ public class ClosestPairs {
 		  }
 		else {
 			
-			int median = (numPoints) / 2;		/*Calculate median 			*/
-												/*Create a sublist from [0-Median]*/
+			int median = (numPoints) / 2;		/*Calculate median Index		*/
+												/*Calculate median value           */
+			double medianValue = points.list.get(median).x;
+												/*Create a sublist from [0-Median)*/
+			
 			List<Point> head = points.list.subList(0,  median);
-												/*Create a sublist from [Median-End]*/
+												/*Create a sublist from [Median-End)*/
 	        List<Point> tail = points.list.subList(median, numPoints);
 
 	        									/* Create A Sub PointList for Head*/
-			PointList headPL = new PointList();
-			headPL.list = new ArrayList<Point>(head); 
+			PointList headPoints = new PointList();
+			headPoints.list = new ArrayList<Point>(head); 
 			
 												/* Create A Sub PointList for Tail*/
-			PointList tailPL = new PointList();
-			tailPL.list = new ArrayList<Point>(tail); 
+			PointList tailPoints = new PointList();
+			tailPoints.list = new ArrayList<Point>(tail); 
 			
 												/* Calculate upper bounds of min */
-			double minTail = MinDist(tailPL, pairs);
-			double minHead = MinDist(headPL, pairs);
+			double minTail = MinDist(tailPoints, pairs);
+			double minHead = MinDist(headPoints, pairs);
 			minDist = (minTail < minHead) ? minTail : minHead;
 			
 			PointList BL = new PointList();
 			PointList BR = new PointList();
 			
+												/* Find points in head and tail within a minimum
+												 * distance from the median
+												 */
+			BL.list = headPoints.withinRange(medianValue - minDist, median, Cartesian.xSort);
+			BR.list = tailPoints.withinRange(medianValue, median + minDist, Cartesian.xSort);
 			
+												/* Combine BL and BR Lists 			*/
+			PointList combined = new PointList();
+			if(BL.list == null && BR.list == null) { return minDist; }
+			if(BL.list != null) { combined.list.addAll(BL.list); }
+			if(BR.list != null) { combined.list.addAll(BR.list); }
 			
+			double innerMin = itSearchCP(combined, pairs);									
+												/*Return the minimum distance found */
+			return (innerMin < minDist) ? innerMin : minDist;
+			}	
 		}
-	}
-
 	/**************************************************************************
 	* itSearchCP (Iterative-Search-Closest Pair)Method iterative search 
 	*                                           ...for closest pair
