@@ -1,11 +1,22 @@
 package closestPairs;
-
+/******************************************************************************
+ * File: ClosestPairsTest.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
+/******************************************************************************
+ * ClosestPairsTests contains a series of test for the ClosestPairs class
+ * 
+ * Note: Due to time constraints, the unit tests may have issues or be 
+ *       incomplete. Tests were created in an ad hoc manner and modified
+ *       freely in order to debug code. 
+ *******************************************************************************/
 public class ClosestPairsTest {
 	
 	@Test

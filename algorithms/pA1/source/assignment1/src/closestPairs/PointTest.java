@@ -12,12 +12,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-
-
-/**************************************************************************
- * Tests the Point Class
- *
- *************************************************************************/
+/******************************************************************************
+ * Point contains a series of test for the Point class
+ * 
+ * Note: Due to time constraints, the unit tests may have issues or be 
+ *       incomplete. Tests were created in an ad hoc manner and modified
+ *       freely in order to debug code. 
+ *******************************************************************************/
 class PointTest {
 
 	@Test

@@ -1,18 +1,56 @@
 package closestPairs;
-
+/******************************************************************************
+ * File: ClosestPairs.java
+ * Assignment: PA1
+ * Author: John A. Herrmann
+ * Class: EN.605.621.82.SP20 Foundations of Algorithms
+ * Date: 3/2/2020
+ *******************************************************************************/
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**************************************************************************
+ * ClosestPairs Models an object which takes in a list of points and
+ *              then can output the following:
+ *              (1) closest pair distance
+ *              (2) N closest pairs
+ *              (3) N closest pairs distances 
+ * 
+ * The ClosestPairs class has the following methods:
+ * 
+ * 				public ClosestPairs(PointList p)
+ * 				public double findDumb()
+ * 				public void ClosestNPairs(int n)
+ * 				public void ClosestNPairsDistance(int n)
+ * 				public void sortPairs()
+ * 				public double findSmart()
+ * 
+ * Example Use:
+ * 				Point p1 = new Point(0,0);
+ *				Point p2 = new Point(10,0);
+ *				Point p3 = new Point(0,11);
+ *				Point p4 = new Point(100,0);
+ *		
+ *				PointList pL = new PointList();
+ *				pL.add(p1);
+ *				pL.add(p2);
+ *				pL.add(p3);
+ *				pL.add(p4);
+ *		
+ *				ClosestPairs cP = new ClosestPairs(pL);
+ *				double distance = cP.findDumb(); 
+ *    OR 
+ *              double distance = cP.findSmart();
+ *****************************************************************************/
 public class ClosestPairs {
 
-	
-	public PointList list;				    /* Models a list of points   */
+	public PointList list;				    /* Models a list of points   	 */
 	private boolean analyzed;			    /* Denotes whether closest pair
 											   algorithm has been completed 
-											   for findSmart*/
+											   for findSmart				 */
 	              
-	public ArrayList<PointList> pairList;  /* Stores Analyzed Pair Data*/
+	public ArrayList<PointList> pairList;   /* Stores Analyzed Pair Data	 */
 	
 	
 	/**************************************************************************
@@ -27,16 +65,15 @@ public class ClosestPairs {
 			this.list = temp;
 		}
 											/* If so, initialize the ClosestPairs 
-											 * ... class						*/
+											 * ... class					*/
 		else { this.list = p;}
 		
 											/*Create an arrayList of Pairs to 
-											 *... store analyzed pair data     */
+											 *... store analyzed pair data    */
 		ArrayList<PointList> temp_pairs = new ArrayList<PointList>();
 		this.pairList = temp_pairs;
 		this.analyzed = false;
 	}
-	
 	/**************************************************************************
 	 * findDumb Method uses an brute-force algorithm to find closest pairs
 	 * @return closest pair distance
@@ -48,9 +85,9 @@ public class ClosestPairs {
 		this.analyzed = false;
 		return itSearchCP(this.list, this.pairList);
 	}
-	
 	/**************************************************************************
-	 * ClosestNPairs Method prints the closest N pairs
+	 * ClosestNPairs Method prints the closest N pairs. 
+	 *               Note: Method must be called after findSmart() method
 	 **************************************************************************/
 	public void ClosestNPairs(int n) {
 		
@@ -67,9 +104,9 @@ public class ClosestPairs {
 				Point a;
 				Point b;
 				double distance; 
-														    /*Confirm list is pair */
+														/*Confirm list is pair */
 				if(tempPair.size() == 2) {	
-					a = tempPair.list.get(0);				/*Acquire Points A & B */			
+					a = tempPair.list.get(0);			/*Acquire Points A & B */			
 					b = tempPair.list.get(1);
 					distance = tempPair.distance;
 					System.out.printf("Point A (%f, %f) and Point B(%f, %f)\n" ,
@@ -78,9 +115,9 @@ public class ClosestPairs {
 			}
 		}
 	}
-	
 	/**************************************************************************
 	 * ClosestNPairsDistance Method prints the closest N pairs & distances
+	 * 						 Note: Method must be called after findSmart() method
 	 **************************************************************************/
 	public void ClosestNPairsDistance(int n) {
 		
@@ -97,38 +134,38 @@ public class ClosestPairs {
 				Point a;
 				Point b;
 				double distance; 
-														    /*Confirm list is pair */
+														/*Confirm list is pair */
 				if(tempPair.size() == 2) {	
-					a = tempPair.list.get(0);				/*Acquire Points A & B */			
+					a = tempPair.list.get(0);			/*Acquire Points A & B */			
 					b = tempPair.list.get(1);
 					distance = tempPair.distance;
-					System.out.printf("Point A (%f, %f) and Point B(%f, %f) are distance %f apart \n" ,
+					System.out.printf("[%f, %f] & [%f, %f] are distance %f apart \n" ,
 							a.x, a.y, b.x, b.y, distance);
 				}		
 			}
 		}
 	}
-	
-	/***************************************************************
-	 * sortPairs Sorts Pairs in PairList by distance 
-	 ***************************************************************/
+	/**************************************************************************
+	 * sortPairs Sorts Pairs in PairList by distance
+	 * 			 Note: Method must be called after findSmart() method
+	 **************************************************************************/
 		public void sortPairs()
 		{
 			Collections.sort(this.pairList, new SortByDistance());
 		}
-		
 	/**************************************************************************
 	 * findSmart Method uses an efficient algorithm to find closest pairs
 	 * @return closest pair distance
 	 **************************************************************************/
 	public double findSmart() {
-		
+													/*Stores pair calculations */
 		ArrayList<PointList> temp_pairs = new ArrayList<PointList>();
 		this.pairList = temp_pairs;
-		this.list.sortXAxis();
-		this.analyzed = true;
-		return MinDist(this.list, this.pairList);
 		
+		this.list.sortXAxis();						/*Sort along x before start*/
+		this.analyzed = true;						/*Enables pair analysis    */
+		
+		return MinDist(this.list, this.pairList);   /*Start of recursive algorithm*/
 	}
 	/**************************************************************************
 	 * MinDist Method uses an efficient algorithm to find closest pairs
