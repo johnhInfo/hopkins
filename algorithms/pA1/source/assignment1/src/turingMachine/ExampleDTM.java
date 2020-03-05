@@ -13,7 +13,17 @@ package turingMachine;
  ******************************************************************************/
 public class ExampleDTM {
 	
-	public static void main(String[] args) {
+	public GenericDTM exampleDTM;
+	public char[] tape;
+	/************************************************************************
+	 * Constructor Initializes the ExampleDTM and provides the DTM with 
+	 *             the input tape
+	 * 
+	 * @param tape an array that models a Turing Machine's tape 
+	 ***********************************************************************/
+	public ExampleDTM(char[] tape) {
+		
+		this.tape = tape;
 		
 		/********************************************************************
 		 * Control Flow:
@@ -72,16 +82,19 @@ public class ExampleDTM {
 		 ********************************************************************/
 		 char[] alphabet = {'0','1'};
 		 char blankSymbol = 'b';
-		 char[] tape = {'1', '0', '1', '0', '0', 'b', 'b'};
 		 State[] states = {q0, q1, q2, q3};
 		 int initialState = 0;
-		 GenericDTM mod3exampleDTM = new GenericDTM(alphabet, blankSymbol,
-				                     tape, states, initialState);
-		 /********************************************************************
-		  * Execute the Example DTM
-		  ********************************************************************/
-		 mod3exampleDTM.program();
-		 
+		 this.exampleDTM = new GenericDTM(alphabet, blankSymbol,
+				                     this.tape, states, initialState);
+	}
+	/************************************************************************
+	 * program Executes the ExampleDTM Turing Machine for a given input 
+	 * 
+	 ***********************************************************************/
+	public char[] program() 
+	{	
+		exampleDTM.program();
+		return this.tape;
 	}
 
 }

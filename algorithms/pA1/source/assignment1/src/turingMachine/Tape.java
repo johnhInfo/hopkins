@@ -32,7 +32,7 @@ public class Tape {
 		if(startIndex <= 0)
 		{
 			this.headPosition = 0;
-			System.out.println("Tape->Init: Start Index Set to 0");
+			//System.out.println("Tape->Init: Start Index Set to 0");
 		}
 		
 		/* StartIndex is too big */
