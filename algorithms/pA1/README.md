@@ -9,6 +9,19 @@ Date: 3/2/2020
             (1) Folder Structure 
             (2) Development Environment 
             (3) Executing the Code & Sample Outputs
+
+
+Disclaimer: I apologize for the ~2-day delay in submitting
+            this project. I spent around 70 hours working
+            on this -- learned alot along the way --
+            but experienced many issues throughout with:
+            
+            - java   //haven't programmed in java in 2 yrs
+            - eclipse
+            - elcipse/git integration
+            - eclipse/terminal integration
+            - eclipse/jUnit integration
+            - eclipse/workspace dependency errorså
 -----------------------------------------------------------
             Section 1: Folder Structure
 
